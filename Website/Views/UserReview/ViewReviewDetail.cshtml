@@ -1,0 +1,71 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model ViewReviewDetailViewModel
+@using Website.Helpers.RazorExtensions
+
+@{
+    var pageTitle = Localizer["Feedback"].Value;
+}
+
+
+
+<h1 id="wb-cont" property="name">@String.Format("{0} {1}{2}", pageTitle, Localizer["Num"].Value, Model.Review.Id.ToString())</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        @Localizer["ReviewRating"]
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mrgn-bttm-lg">
+        @String.Format("{0}: {1}",
+       Model.Review.ReviewRating.Id.ToString(),
+       Model.Review.ReviewRating.EnglishDesc)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Localizer["Comment"]
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12  mrgn-bttm-lg">
+        @Model.Review.Comment
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Localizer["ReviewSubmittedTime"]
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mrgn-bttm-lg">
+        @Model.Review.CreatedDate.Value.ToString("yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture) <abbr title="Eastern Standard Time">EST</abbr>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        @Localizer["Review"]
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mrgn-bttm-lg">
+        @Model.Review.Id.ToString()
+    </div>
+</div>
+
+
+<p>
+    <a href="@Url.Action("ViewReviewList","UserReview")">
+        @Localizer["ReturnToFeedbackList"]
+    </a>
+</p>

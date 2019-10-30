@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    var pageTitle = Localizer["ThankYou"];
+}
+
+
+
+<h1 id="wb-cont" property="name">@pageTitle</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            @Localizer["FeedbackSubmitted"]
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mrgn-bttm-lg">
+        <p>
+            <a href="@Url.Action("ViewReviewList", "UserReview" )" class="btn btn-primary" id="btnSubmitFeedback">View feedback list</a>
+        </p>
+    </div>
+</div>
+
+<p>
+    <a href="@Url.Action("Index","Home")">
+        @Localizer["ReturnToHome"]
+    </a>
+</p>

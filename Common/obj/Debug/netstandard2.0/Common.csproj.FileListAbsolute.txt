@@ -1,0 +1,9 @@
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\bin\Debug\netstandard2.0\Common.deps.json
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\bin\Debug\netstandard2.0\Common.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\bin\Debug\netstandard2.0\Common.pdb
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.csprojAssemblyReference.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.csproj.CoreCompileInputs.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.AssemblyInfoInputs.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.AssemblyInfo.cs
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\Common\obj\Debug\netstandard2.0\Common.pdb

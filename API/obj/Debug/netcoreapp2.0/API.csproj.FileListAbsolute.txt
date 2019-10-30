@@ -1,0 +1,17 @@
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\API.deps.json
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.json
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\API.runtimeconfig.dev.json
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\API.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\API.pdb
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\Common.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\DataAccessLayer.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\Common.pdb
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\bin\Debug\netcoreapp2.0\DataAccessLayer.pdb
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.csprojAssemblyReference.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.csproj.CoreCompileInputs.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.AssemblyInfoInputs.cache
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.AssemblyInfo.cs
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.csproj.CopyComplete
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.dll
+\\psf\Home\Downloads\UserReviewFinal\UserReview\API\obj\Debug\netcoreapp2.0\API.pdb

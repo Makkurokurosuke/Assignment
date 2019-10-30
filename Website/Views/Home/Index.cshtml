@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Welcome"];
+}
+    
+<h1 property="name" id="wb-cont">@Localizer["Welcome"]</h1>
+
+<div class="row wb-equal">
+    <div class="col-md-6">
+        <div class="panel panel-default panel-service hght-inhrt">
+            <header class="panel-heading">
+                @*<h2 class="panel-title"></h2>*@
+            </header>
+            <div class="panel-body">
+                <a href="@Url.Action("SubmitReview", "UserReview" )">@Localizer["SubmitYourFeedback"]</a>
+            </div>
+            <div class="panel-footer">
+                @*<div class="text-center mrgn-tp-sm">
+                    <a href="@Url.Action("SubmitReview", "UserReview" )" class="btn btn-primary" id="btnSubmitFeedback">@Localizer["SubmitFeedback"]</a>
+                </div>*@
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default panel-service hght-inhrt">
+            <header class="panel-heading">
+                @*<h2 class="panel-title"> <a href="@Url.Action("ViewReviewList", "UserReview" )">@Localizer["ListOfALlReviews"]</a></h2>*@
+            </header>
+            <div class="panel-body">
+                @*<h3 class="text-center mrgn-tp-sm">
+            <div class="fnt-nrml mrgn-bttm-sm"></div>
+        </h3>*@
+                <a href="@Url.Action("ViewReviewList", "UserReview" )" id="btnSubmitFeedback">@Localizer["ViewFeedbackList"]</a>
+            </div>
+            <div class="panel-footer">
+                @*<div class="text-center mrgn-tp-sm">
+                    <a href="@Url.Action("ViewReviewList", "UserReview" )" class="btn btn-primary" id="btnSubmitFeedback">@Localizer["ViewFeedbackList"]</a>
+                </div>*@
+            </div>
+        </div>
+
+    </div>
+</div>

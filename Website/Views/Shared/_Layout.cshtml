@@ -1,0 +1,120 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    string lang = "";
+    string langLinkLang = "";
+    string langLinkLanguage = "";
+    string langLink = "";
+    string routing = "";
+
+    if (System.Globalization.CultureInfo.CurrentUICulture.Name.Equals("en-CA"))
+    {
+        lang = "en";
+        langLinkLang = "fr";
+        langLinkLanguage = "Français";
+        routing = "fr-CA";
+    }
+    else
+    {
+        lang = "fr";
+        langLinkLang = "en";
+        langLinkLanguage = "English";
+        routing = "en-CA";
+    }
+
+    string thisURL = Context.Request.Path;
+    langLink = "/" + routing + thisURL.Substring(6) + Context.Request.QueryString;
+
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="@lang" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="@lang" dir="ltr">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+    <title>@ViewData["AppTitle"]</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0" />*@
+    <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/soyutils.js"></script>
+    <script type="text/javascript" src="@String.Format("{0}{1}{2}", "https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/wet-" , lang, ".js")"></script>
+
+    <!-- Write closure template -->
+    <script>
+        document.write(wet.builder.refTop({
+            "cdnEnv": "prod",
+            "isApplication": true
+        }));
+    </script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    <div id="def-top">
+    </div>
+    <!-- Write closure template -->
+
+    <script>
+        var defTop = document.getElementById("def-top");
+        defTop.outerHTML = wet.builder.appTop({
+            "cdnEnv": "prod",
+            "appName": [{ "text": "@ViewData["AppTitle"]", "href": "@ViewData["HomeURL"]" }],
+          //  "lngLinks": [{ "lang": "@langLinkLang", "href": "@langLink", "text": "@langLinkLanguage" }],
+         //   "menuPath": "https://ssl-templates.services.gc.ca/app/cls/WET/gcweb/v4_0_30/cdts/ajax/appmenu-en.html",
+         //   "appSettings": [{ "href": "#" }],
+            "signOut": [{ "href": "@ViewData["SignOutURL"]" }],
+         //   "customSearch": "test",
+            "breadcrumbs": [{
+                "title": "Home",
+                "href": "@ViewData["HomeURL"]"
+            }]
+            //"breadcrumbs": [{
+            //    "title": "My application",
+            //    "href": "https://open.canada.ca/en/apps?_ga=2.158588857.2050402716.1501624806-1491110290.1492697601"
+            //}, {
+            //    "title": "First section",
+            //    "href": "#"
+            //}, {
+            //    "title": "Service A"
+            //}]
+        });
+    </script>
+
+
+    <main role="main" property="mainContentOfPage" class="container">
+
+        <div class="container body-content">
+            @RenderBody()
+
+
+            <div id="def-preFooter">
+            </div>
+
+            <script type="text/javascript">
+                var defPreFooter = document.getElementById("def-preFooter");
+                defPreFooter.outerHTML = wet.builder.preFooter({ "cdnEnv": "prod", "showPostContent": false, "showFeedback": false, "showShare": false });
+            </script>
+        </div>
+
+
+    </main>
+
+
+
+
+    <div id="def-footer">
+    </div>
+
+    <script type="text/javascript">
+        var defFooter = document.getElementById("def-footer");
+        defFooter.outerHTML = wet.builder.appFooter({ "cdnEnv": "prod", "showFeatures": false, "footerSections": [] });
+    </script>
+
+    <script type="text/javascript">
+        document.write(wet.builder.refFooter({ "cdnEnv": "prod", "exitScript": false, "displayModal": false }));
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

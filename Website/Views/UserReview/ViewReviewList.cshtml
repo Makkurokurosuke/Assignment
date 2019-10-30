@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@model ViewReviewListViewModel
+@using Website.Helpers.RazorExtensions
+
+@{
+    var pageTitle = Localizer["FeedbackList"];
+}
+
+
+
+@section Scripts {
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+}
+
+<h1 id="wb-cont" property="name">@pageTitle</h1>
+
+<p>@Localizer["FeedbackListInfo"]</p>
+
+<div class="dataTables_wrapper no-footer" id="wb-auto-3_wrapper">
+    <table class="wb-tables table table-striped table-hover "
+           data-wb-tables='{"info" : false,"filter":true,"order" : [[1,"desc"]], "columnDefs": [{ "orderable" : true, "targets":[] },{"searchable" : true, "targets": []}] }'
+           id="reviewListTbl" role="grid" aria-describedby="wb-auto-3_info" data-page-length="25">
+        <thead>
+            <tr role="row">
+                @*<th>@Localizer["ReviewId"]</th>*@
+                <th>@Localizer["Rating"]</th>
+                <th>@Localizer["ReviewSubmittedDate"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model.ReviewList)
+            {
+                <tr role="row">
+                    @*<td>
+                        
+                    </td>*@
+                    <td>
+                        <a href="@Url.Action("ViewReviewDetail", "UserReview" ,  new { id = review.Id } )">
+                            @String.Format("{0}: {1}",
+review.ReviewRating.Id.ToString(),
+review.ReviewRating.EnglishDesc)
+                                            </a>
+                        
+                    </td>
+                    <td>@review.CreatedDate.Value.ToString("yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture) <abbr title="Eastern Standard Time">EST</abbr></td>
+                </tr>
+            }
+
+        </tbody>
+    </table><div class="bottom"><div class="dataTables_paginate paging_simple_numbers hidden" id="wb-auto-3_paginate"><a tabindex="0" class="paginate_button previous disabled" id="wb-auto-3_previous" aria-controls="wb-auto-3" data-dt-idx="0">@Localizer["Previous"]</a><span><a tabindex="0" class="paginate_button current" aria-controls="wb-auto-3" data-dt-idx="1">1</a></span><a tabindex="0" class="paginate_button next disabled" id="wb-auto-3_next" aria-controls="wb-auto-3" data-dt-idx="2">@Localizer["Next"]</a></div></div><div class="clear"></div>
+</div>

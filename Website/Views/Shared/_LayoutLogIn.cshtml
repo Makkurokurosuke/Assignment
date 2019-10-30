@@ -1,0 +1,93 @@
+﻿@{
+    string lang = "";
+    string langLinkLang = "";
+    string langLinkLanguage = "";
+    string langLink = "";
+    string routing = "";
+
+    if (System.Globalization.CultureInfo.CurrentUICulture.Name.Equals("en-CA"))
+    {
+        lang = "en";
+        langLinkLang = "fr";
+        langLinkLanguage = "Français";
+        routing = "fr-CA";
+    }
+    else
+    {
+        lang = "fr";
+        langLinkLang = "en";
+        langLinkLanguage = "English";
+        routing = "en-CA";
+    }
+
+    string thisURL = Context.Request.Path;
+    langLink = "/" + routing + thisURL.Substring(6);
+
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="@lang" dir="ltr">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+    <title>@ViewData["AppTitle"]</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0" />*@
+    <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/soyutils.js"></script>
+    <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/wet-en.js"></script>
+
+    <!-- Write closure template -->
+    <script>
+        document.write(wet.builder.refTop({
+            "cdnEnv": "prod",
+            "isApplication": true
+        }));
+    </script>
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    @*<header>
+        <div class="container" id="wb-bnr">
+            <section class="text-right" id="wb-lng"><h2 class="wb-inv">Language selection</h2><ul class="list-inline margin-bottom-none"><li><a lang="@langLinkLang" href="@langLink">@langLinkLanguage</a></li></ul></section>
+        </div>
+    </header>*@
+
+    <div id="def-top">
+    </div>
+    <!-- Write closure template -->
+    <script>
+    </script>
+
+
+    <main role="main" property="mainContentOfPage" class="container">
+
+        <div class="container body-content">
+            @RenderBody()
+
+            <div id="def-preFooter">
+            </div>
+
+            <script type="text/javascript">
+                var defPreFooter = document.getElementById("def-preFooter");
+                defPreFooter.outerHTML = wet.builder.preFooter({ "cdnEnv": "prod", "showPostContent": false, "showFeedback": false, "showShare": false });
+            </script>
+        </div>
+
+
+    </main>
+
+
+
+
+    <div id="def-footer">
+    </div>
+
+
+    <script type="text/javascript">
+        document.write(wet.builder.refFooter({ "cdnEnv": "prod", "exitScript": false, "displayModal": false }));
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
