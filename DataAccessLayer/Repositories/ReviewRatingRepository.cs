@@ -7,43 +7,100 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class ReviewRatingRepository : IReviewRatingRepository
+    public class UserReviewRepository : IUserReviewRepository
     {
 
-        public ReviewRatingRepository()
+        public UserReviewRepository()
         {
         }
 
-        public List<ReviewRatingTypeModel> GetAll()
+        public List<UserReviewModel> GetAll()
         {
-
-            List<ReviewRatingTypeModel> ratings = null;
+            List<UserReviewModel> reviews = null;
 
             using (UserReviewContext context = new UserReviewContext())
             {
-                ratings = (from ratingTbl in context.RatingTypes
-                           orderby ratingTbl.Id
-                           select new ReviewRatingTypeModel
+                reviews = (from reviewTbl in context.Reviews
+                           join ratingTbl in context.RatingTypes
+                           on reviewTbl.RatingTypeId equals ratingTbl.Id
+                           orderby reviewTbl.CreatedDate descending
+                           select new UserReviewModel
                            {
-                               EnglishDesc = ratingTbl.EnglishDesc,
-                               FrenchDesc = ratingTbl.FrenchDesc,
-                               Id = ratingTbl.Id
+                               Id = reviewTbl.Id,
+                               //   Comment = reviewTbl.Comment,
+                               CreatedDate = reviewTbl.CreatedDate,
+                               ReviewRating = new ReviewRatingTypeModel
+                               {
+                                   EnglishDesc = ratingTbl.EnglishDesc,
+                                   FrenchDesc = ratingTbl.FrenchDesc,
+                                   Id = ratingTbl.Id
+                               }
                            }).ToList();
             }
-            return ratings;
+            return reviews;
         }
 
-        public bool DoesRatingExist(int ratingId)
+        public UserReviewModel GetById(int reviewId)
         {
-            bool ratingExist = false;
+            UserReviewModel review = null;
 
             using (UserReviewContext context = new UserReviewContext())
             {
-                int count = context.RatingTypes.Where(x => x.Id == ratingId).Count();
-                ratingExist = count > 0;
+                review = context.Reviews.Where(x => x.Id == reviewId)
+                    .Select
+                    (x => new UserReviewModel
+                    {
+                        Id = x.Id,
+                        Comment = x.Comment,
+                        CreatedDate = x.CreatedDate,
+                        ReviewRating = new ReviewRatingTypeModel
+                        {
+                            Id = x.RatingTypeId
+                        }
+                    }
+                    ).FirstOrDefault();
+
+                if (review != null)
+                {
+
+                    review.ReviewRating = context.RatingTypes.Where(x => x.Id == review.ReviewRating.Id)
+                    .Select
+                    (x => new ReviewRatingTypeModel
+                    {
+                        EnglishDesc = x.EnglishDesc,
+                        FrenchDesc = x.FrenchDesc,
+                        Id = x.Id
+                    }
+                    ).FirstOrDefault();
+                }
             }
 
-            return ratingExist;
+            return review;
         }
+
+        public int Add(string comment, int userId, int ratingId)
+        {
+            using (UserReviewContext context = new UserReviewContext())
+            {
+
+                var timeUtc = DateTime.UtcNow;
+                TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+                DateTime easternTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone);
+
+                var review = new DataAccessLayer.Models.Reviews
+                {
+                    Comment = comment,
+                    CreatedDate = easternTime,
+                    UserId = userId,
+                    RatingTypeId = ratingId
+                };
+                context.Reviews.Add(review);
+                context.SaveChanges();
+
+                return review.Id;
+            }
+
+        }
+
     }
 }

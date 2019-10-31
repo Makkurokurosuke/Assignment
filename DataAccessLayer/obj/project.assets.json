@@ -5477,11 +5477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "\\\\psf\\Home\\Downloads\\Assignment\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "\\\\psf\\Home\\Downloads\\Assignment\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\Yuko\\.nuget\\packages\\",
-      "outputPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\DataAccessLayer\\obj\\",
+      "outputPath": "\\\\psf\\Home\\Downloads\\Assignment\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5500,8 +5500,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj": {
-              "projectPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj"
+            "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj": {
+              "projectPath": "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj"
             }
           }
         }

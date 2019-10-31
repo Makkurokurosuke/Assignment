@@ -18,5 +18,28 @@ namespace Common.Models
         public UserModel User { get; set; }
         public ReviewRatingTypeModel ReviewRating { get; set; }
 
+        public bool ShouldSerializeUser()
+        {
+            if (this.User != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ShouldSerializeComment()
+        {
+            if (!String.IsNullOrEmpty(this.Comment))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

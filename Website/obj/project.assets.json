@@ -13105,11 +13105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Website\\Website.csproj",
+      "projectUniqueName": "\\\\psf\\Home\\Downloads\\Assignment\\Website\\Website.csproj",
       "projectName": "Website",
-      "projectPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Website\\Website.csproj",
+      "projectPath": "\\\\psf\\Home\\Downloads\\Assignment\\Website\\Website.csproj",
       "packagesPath": "C:\\Users\\Yuko\\.nuget\\packages\\",
-      "outputPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Website\\obj\\",
+      "outputPath": "\\\\psf\\Home\\Downloads\\Assignment\\Website\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13128,8 +13128,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj": {
-              "projectPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj"
+            "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj": {
+              "projectPath": "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj"
             }
           }
         }

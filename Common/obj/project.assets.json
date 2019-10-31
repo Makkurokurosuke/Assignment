@@ -4213,11 +4213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj",
+      "projectUniqueName": "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\Common.csproj",
+      "projectPath": "\\\\psf\\Home\\Downloads\\Assignment\\Common\\Common.csproj",
       "packagesPath": "C:\\Users\\Yuko\\.nuget\\packages\\",
-      "outputPath": "\\\\psf\\Home\\Downloads\\UserReviewFinal\\UserReview\\Common\\obj\\",
+      "outputPath": "\\\\psf\\Home\\Downloads\\Assignment\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
