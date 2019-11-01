@@ -14,20 +14,20 @@ namespace Common
         /// <summary>
         /// API token Audience (aud) claim
         /// </summary>
-        public const string ApiJwtAudience = "";
+        public const string ApiJwtAudience = "ReviewAPIAudience";
         /// <summary>
         /// API token Issuer (iss) claim
         /// </summary>
-        public const string ApiJwtIssuer = "";
+        public const string ApiJwtIssuer = "ReviewAPIIssur";
         /// <summary>
         /// API token Expiration (exp) in seconds
         /// </suemmary>
-        public const int ApiJwtExpirationSec = 60 * 60 * 24; //24 hours
+        public const int ApiJwtExpirationSec = 30 * 60 * 60 * 24;
 
         /// <summary>
         /// API common key pass
         /// </summary>
-        private const string ApiSecurityTokenPass = "";
+        private const string ApiSecurityTokenPass = "1234567890QWERTYUIOPASDFGHJKLZXCVBNN";
 
         /// <summary>
         /// API token generation singleton common key
